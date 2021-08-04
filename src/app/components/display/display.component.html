@@ -1,0 +1,20 @@
+<div class="row col-8 m-auto">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of displayData; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{p.name}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

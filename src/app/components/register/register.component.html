@@ -1,0 +1,30 @@
+<div class="col-8 m-auto p-3">
+<form class="bg-secondary col-8 m-auto p-3 form" [formGroup] = "validateForm">
+    <div class="row mb-3 justify-content-around">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-8">
+          <input type="text" *ngIf="validateName" class="form-control" id="name" formControlName="name">
+          <input type="text" *ngIf="!validateName" class="form-control is-invalid" id="name" formControlName="name"> 
+          <!-- is-invalid -->
+        </div>
+        <p *ngIf="!validateName" class="text-center text-danger">! Please Enter A valid Name</p>
+      </div>
+    <div class="row mb-3 justify-content-around">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-8">
+        <input type="email" *ngIf="validateEmail" class="form-control" id="email" formControlName="email">
+        <input type="email" *ngIf="!validateEmail" class="form-control is-invalid" id="email" formControlName="email">
+      </div>
+      <p *ngIf="!validateEmail" class="text-center text-danger">! Please Enter A valid E-mail</p>
+    </div>
+    <div class="row mb-3 justify-content-around">
+        <label for="age" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-8">
+          <input type="number" *ngIf="validateAge" class="form-control" id="age" formControlName="age">
+          <input type="number" *ngIf="!validateAge" class="form-control is-invalid" id="age" formControlName="age">
+        </div>
+        <p *ngIf="!validateAge" class="text-center text-danger">! Please Enter A valid Age</p>
+      </div>
+    <button type="submit" class="btn btn-danger col-4 d-block m-auto" (click)="sendData()">Add</button>
+  </form>
+</div>
